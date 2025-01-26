@@ -1,0 +1,21 @@
+<GridLayout xmlns="http://schemas.nativescript.org/tns.xsd" class="pet-container">
+    <!-- Pet Animation Container -->
+    <ContentView class="pet-animation">
+        <Image src="{{ currentAnimation }}" 
+               class="pet-image"
+               width="200" 
+               height="200" />
+    </ContentView>
+
+    <!-- Emotion Indicator -->
+    <Label text="{{ currentEmotion }}" 
+           class="emotion-indicator"
+           horizontalAlignment="center"
+           verticalAlignment="top" />
+
+    <!-- Activity Status -->
+    <Label text="{{ currentActivity }}"
+           class="activity-status"
+           horizontalAlignment="center"
+           verticalAlignment="bottom" />
+</GridLayout>

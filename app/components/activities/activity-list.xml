@@ -1,0 +1,25 @@
+<GridLayout rows="auto, *" class="activity-container p-4">
+    <!-- Progress Header -->
+    <StackLayout row="0" class="progress-header p-4 bg-blue-50 rounded-lg mb-4">
+        <Label text="{{ 'Total Points: ' + progress.totalPoints }}" class="text-lg font-bold" />
+        <Label text="{{ 'Streak: ' + progress.streakDays + ' days' }}" class="text-md" />
+    </StackLayout>
+
+    <!-- Activities List -->
+    <ListView row="1" items="{{ activities }}" class="activity-list">
+        <ListView.itemTemplate>
+            <GridLayout columns="*, auto" class="activity-item p-4 border-b">
+                <StackLayout col="0">
+                    <Label text="{{ name }}" class="text-lg font-semibold" />
+                    <Label text="{{ description }}" class="text-sm text-gray-600" />
+                    <Label text="{{ 'Points: ' + points }}" class="text-xs text-blue-500" />
+                </StackLayout>
+                <Button col="1" 
+                        text="{{ completed ? '✓' : 'Do It!' }}"
+                        tap="{{ $parent.onCompleteActivity }}"
+                        class="{{ completed ? 'completed-btn' : 'complete-btn' }}"
+                        isEnabled="{{ !completed }}" />
+            </GridLayout>
+        </ListView.itemTemplate>
+    </ListView>
+</GridLayout>

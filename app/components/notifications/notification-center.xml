@@ -1,0 +1,45 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Notifications">
+        <ActionItem text="Clear All" 
+                   tap="{{ onClearAll }}" 
+                   ios.position="right"
+                   android.position="actionBar" />
+    </ActionBar>
+
+    <GridLayout rows="auto, *">
+        <!-- Notification Filters -->
+        <StackLayout row="0" orientation="horizontal" class="p-2">
+            <Button text="All" 
+                    tap="{{ onFilterAll }}"
+                    class="{{ currentFilter === 'all' ? 'btn-primary' : 'btn-outline' }}" />
+            <Button text="Unread" 
+                    tap="{{ onFilterUnread }}"
+                    class="{{ currentFilter === 'unread' ? 'btn-primary' : 'btn-outline' }}" />
+        </StackLayout>
+
+        <!-- Notification List -->
+        <ListView row="1" items="{{ filteredNotifications }}" class="notification-list">
+            <ListView.itemTemplate>
+                <GridLayout columns="auto, *, auto" class="notification-item p-4" opacity="{{ read ? 0.7 : 1 }}">
+                    <!-- Notification Icon -->
+                    <Label col="0" 
+                           text="{{ getTypeIcon(type) }}" 
+                           class="notification-icon" />
+
+                    <!-- Notification Content -->
+                    <StackLayout col="1" class="ml-2">
+                        <Label text="{{ title }}" class="font-bold" />
+                        <Label text="{{ message }}" textWrap="true" />
+                        <Label text="{{ createdAt | timeAgo }}" class="text-sm text-gray-500" />
+                    </StackLayout>
+
+                    <!-- Actions -->
+                    <Button col="2" 
+                            text="×" 
+                            tap="{{ $parent.onClearNotification }}"
+                            class="clear-btn" />
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    </GridLayout>
+</Page>

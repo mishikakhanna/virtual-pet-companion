@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Pet Display Styles */
+.pet-container {
+    width: 100%;
+    height: 300;
+    background-color: transparent;
+}
+
+.pet-animation {
+    horizontal-alignment: center;
+    vertical-alignment: center;
+}
+
+.pet-image {
+    border-radius: 100;
+}
+
+.emotion-indicator {
+    margin-top: 16;
+    font-size: 16;
+    color: #666;
+}
+
+.activity-status {
+    margin-bottom: 16;
+    font-size: 14;
+    color: #888;
+}
+
+/* Chat Interface Styles */
+.chat-container {
+    background-color: #fff;
+}
+
+.message-user {
+    background-color: #007AFF;
+    color: #fff;
+    border-radius: 16;
+    padding: 8 12;
+    margin: 4 8;
+    max-width: 80%;
+}
+
+.message-pet {
+    background-color: #E9ECEF;
+    color: #212529;
+    border-radius: 16;
+    padding: 8 12;
+    margin: 4 8;
+    max-width: 80%;
+}
+
+.input-container {
+    border-top-width: 1;
+    border-top-color: #DEE2E6;
+    padding: 8;
+    background-color: #fff;
+}
+
+.message-input {
+    border-radius: 20;
+    border-width: 1;
+    border-color: #DEE2E6;
+    padding: 8 16;
+    margin-right: 8;
+    background-color: #F8F9FA;
+}
+
+.send-button {
+    border-radius: 20;
+    background-color: #007AFF;
+    color: #fff;
+    padding: 8 16;
+    min-width: 80;
+}
+
+/* Activity List Styles */
+.activity-container {
+    background-color: #fff;
+}
+
+.progress-header {
+    border-radius: 12;
+}
+
+.activity-item {
+    border-bottom-width: 1;
+    border-bottom-color: #E9ECEF;
+}
+
+.complete-btn {
+    background-color: #007AFF;
+    color: #fff;
+    border-radius: 8;
+    padding: 8 16;
+    min-width: 70;
+}
+
+.completed-btn {
+    background-color: #28A745;
+    color: #fff;
+    border-radius: 8;
+    padding: 8 16;
+    min-width: 70;
+}
+
+/* Reward Styles */
+.reward-item {
+    background-color: #F8F9FA;
+    border-radius: 12;
+    margin: 8;
+}
+
+.reward-icon {
+    width: 48;
+    height: 48;
+    border-radius: 24;
+}

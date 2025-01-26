@@ -1,0 +1,29 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Virtual Pet Companion" />
+    
+    <GridLayout rows="*, auto" class="p-4">
+        <!-- Chat Messages List -->
+        <ListView row="0" items="{{ messages }}" class="mb-4">
+            <ListView.itemTemplate>
+                <GridLayout columns="*" class="{{ isUser ? 'justify-end' : 'justify-start' }} p-2">
+                    <StackLayout class="{{ isUser ? 'bg-blue-500' : 'bg-gray-200' }} rounded-lg p-3 max-w-3/4">
+                        <Label text="{{ content }}" textWrap="true" class="{{ isUser ? 'text-white' : 'text-black' }}" />
+                        <Label text="{{ timestamp | timeAgo }}" class="text-xs opacity-70" />
+                    </StackLayout>
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView>
+
+        <!-- Input Area -->
+        <GridLayout row="1" columns="*, auto" class="border-t border-gray-200 pt-4">
+            <TextField col="0" 
+                      text="{{ messageText }}" 
+                      hint="Type a message..." 
+                      class="input p-2 rounded-lg bg-gray-100" />
+            <Button col="1" 
+                    text="Send" 
+                    tap="{{ onSendMessage }}" 
+                    class="ml-2 bg-blue-500 text-white rounded-lg px-4" />
+        </GridLayout>
+    </GridLayout>
+</Page>

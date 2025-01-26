@@ -1,0 +1,48 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Settings" />
+    
+    <ScrollView>
+        <StackLayout class="p-4">
+            <!-- Privacy Settings -->
+            <Label text="Privacy" class="text-lg font-bold mb-2" />
+            <GridLayout rows="auto, auto" columns="*, auto" class="bg-white rounded-lg p-4 mb-4">
+                <Label row="0" col="0" text="Process data locally" class="text-base" />
+                <Switch row="0" col="1" checked="{{ localProcessing }}" />
+                
+                <Label row="1" col="0" text="Save conversation history" class="text-base" />
+                <Switch row="1" col="1" checked="{{ saveHistory }}" />
+            </GridLayout>
+
+            <!-- Notifications -->
+            <Label text="Notifications" class="text-lg font-bold mb-2" />
+            <GridLayout rows="auto, auto" columns="*, auto" class="bg-white rounded-lg p-4 mb-4">
+                <Label row="0" col="0" text="Activity reminders" class="text-base" />
+                <Switch row="0" col="1" checked="{{ activityReminders }}" />
+                
+                <Label row="1" col="0" text="Achievement alerts" class="text-base" />
+                <Switch row="1" col="1" checked="{{ achievementAlerts }}" />
+            </GridLayout>
+
+            <!-- Appearance -->
+            <Label text="Appearance" class="text-lg font-bold mb-2" />
+            <StackLayout class="bg-white rounded-lg p-4 mb-4">
+                <Label text="Theme" class="text-base mb-2" />
+                <SegmentedBar selectedIndex="{{ themeIndex }}">
+                    <SegmentedBar.items>
+                        <SegmentedBarItem title="Light" />
+                        <SegmentedBarItem title="Dark" />
+                        <SegmentedBarItem title="System" />
+                    </SegmentedBar.items>
+                </SegmentedBar>
+            </StackLayout>
+
+            <!-- About -->
+            <Label text="About" class="text-lg font-bold mb-2" />
+            <StackLayout class="bg-white rounded-lg p-4">
+                <Label text="Version 1.0.0" class="text-base" />
+                <Button text="Privacy Policy" tap="{{ onPrivacyPolicy }}" class="text-blue-500" />
+                <Button text="Terms of Service" tap="{{ onTermsOfService }}" class="text-blue-500" />
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</Page>

@@ -1,0 +1,55 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Customize Pet" />
+    
+    <GridLayout rows="*, auto">
+        <!-- Preview Area -->
+        <StackLayout row="0" class="preview-container p-4">
+            <Image src="{{ currentPetImage }}" class="pet-preview" />
+            <Label text="{{ petName }}" class="text-xl font-bold text-center" />
+        </StackLayout>
+
+        <!-- Customization Options -->
+        <ScrollView row="1" class="customization-panel">
+            <StackLayout class="p-4">
+                <!-- Name -->
+                <Label text="Pet Name" class="text-lg font-bold mb-2" />
+                <TextField text="{{ petName }}" hint="Enter pet name" class="mb-4 p-2 bg-white rounded" />
+
+                <!-- Accessories -->
+                <Label text="Accessories" class="text-lg font-bold mb-2" />
+                <ListView items="{{ accessories }}" height="120" class="mb-4">
+                    <ListView.itemTemplate>
+                        <GridLayout columns="auto, *" class="accessory-item p-2" tap="{{ $parent.onSelectAccessory }}">
+                            <Image col="0" src="{{ icon }}" class="accessory-icon" />
+                            <Label col="1" text="{{ name }}" class="ml-2" />
+                        </GridLayout>
+                    </ListView.itemTemplate>
+                </ListView>
+
+                <!-- Background -->
+                <Label text="Background" class="text-lg font-bold mb-2" />
+                <ListView items="{{ backgrounds }}" height="120" class="mb-4">
+                    <ListView.itemTemplate>
+                        <GridLayout columns="auto, *" class="background-item p-2" tap="{{ $parent.onSelectBackground }}">
+                            <Image col="0" src="{{ preview }}" class="background-preview" />
+                            <Label col="1" text="{{ name }}" class="ml-2" />
+                        </GridLayout>
+                    </ListView.itemTemplate>
+                </ListView>
+
+                <!-- Color Theme -->
+                <Label text="Color Theme" class="text-lg font-bold mb-2" />
+                <WrapLayout class="mb-4">
+                    <Repeater items="{{ colorThemes }}">
+                        <Repeater.itemTemplate>
+                            <Button text="{{ name }}" 
+                                   tap="{{ $parent.onSelectColorTheme }}"
+                                   class="color-theme-btn m-1"
+                                   backgroundColor="{{ color }}" />
+                        </Repeater.itemTemplate>
+                    </WrapLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </GridLayout>
+</Page>
