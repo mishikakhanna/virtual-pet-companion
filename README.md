@@ -1,7 +1,7 @@
 # Virtual Pet Companion App Documentation
 
 This documentation provides instructions for setting up, running, and developing the Virtual Pet Companion mobile application built with NativeScript.<br>
-[Product Specification Documentation]([url]https://docs.google.com/document/d/11EafncJ5-NtpCdg_fqr8uMkxKxdugLrd6XWM4mlzYF4/edit?tab=t.0#heading=h.59bnx2mlcus5)
+[Product Specification Documentation](https://docs.google.com/document/d/11EafncJ5-NtpCdg_fqr8uMkxKxdugLrd6XWM4mlzYF4/edit?tab=t.0#heading=h.59bnx2mlcus5)
 
 ## Overview
 
